@@ -1,0 +1,50 @@
+﻿@model Fashion.Models.Slider
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Slider</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SliderTitle" class="control-label"></label>
+                <input asp-for="SliderTitle" class="form-control" />
+                <span asp-validation-for="SliderTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="formFile" class="control-label">Upload File</label>
+                <input asp-for="formFile" class="form-control" />
+                <span asp-validation-for="formFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SliderText" class="control-label"></label>
+                <input asp-for="SliderText" class="form-control" />
+                <span asp-validation-for="SliderText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SliderLink" class="control-label"></label>
+                <input asp-for="SliderLink" class="form-control" />
+                <span asp-validation-for="SliderLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SliderDes" class="control-label"></label>
+                <input asp-for="SliderDes" class="form-control" />
+                <span asp-validation-for="SliderDes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

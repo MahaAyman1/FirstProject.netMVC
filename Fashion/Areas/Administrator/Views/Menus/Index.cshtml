@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Fashion.Models.Menu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Menu List</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MenuName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MenuUrl)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuUrl)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MenuId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MenuId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MenuId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

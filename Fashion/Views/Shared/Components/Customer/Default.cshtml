@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Customer>
+
+   
+                @foreach (var item in Model)
+                {
+                    
+                        <div class="slick-testimonial-caption">
+                            <p class="lead">@item.CustomerComment</p>
+
+                            <div class="slick-testimonial-client d-flex align-items-center mt-4">
+                                <img src="@item.CustomerImg" class="img-fluid custom-circle-image me-3" alt="Customer Image">
+                                <span>@item.CustomerName  , <strong class="text-muted">@item.Department.DepartmentName</strong></span>
+                            </div>
+                        </div>
+                   
+                }
+          
+

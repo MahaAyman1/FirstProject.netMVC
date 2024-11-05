@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Fashion.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Product List</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Create New</a>
+</p>
+<table class ="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.IspPopular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductImg)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.IspPopular)
+            </td>
+            <td>
+                    <img src="@item.ProductImg" alt="@item.ProductName" style="width:40px; height:50px;" />
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

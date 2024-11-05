@@ -1,0 +1,49 @@
+﻿@model Fashion.Models.Employee
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Employee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmployeeName" class="control-label"></label>
+                <input asp-for="EmployeeName" class="form-control" />
+                <span asp-validation-for="EmployeeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InstaUrl" class="control-label"></label>
+                <input asp-for="InstaUrl" class="form-control" />
+                <span asp-validation-for="InstaUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinkeUrl" class="control-label"></label>
+                <input asp-for="LinkeUrl" class="form-control" />
+                <span asp-validation-for="LinkeUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartmentId" class="control-label"></label>
+                <select asp-for="DepartmentId" class ="form-control" asp-items="ViewBag.DepartmentId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="formFile" class="control-label">Upload File</label>
+                <input asp-for="formFile" class="form-control" />
+                <span asp-validation-for="formFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
